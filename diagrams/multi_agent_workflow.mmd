@@ -1,0 +1,19 @@
+flowchart LR
+  S[Start: user prompt] --> UQ[Conversation Agent: extract intent + ask questions]
+  UQ -->|missing info| Q[Collect clarification answers]
+  Q --> UQ
+  UQ --> PLAN[Orchestrator Agent: dispatch planning nodes]
+  PLAN --> WP[Website Planner]
+  PLAN --> DP[Database Planner]
+  PLAN --> SA[SEO/Admin Agent]
+  WP --> MERGE[Orchestrator Merge Draft Spec]
+  DP --> MERGE
+  SA --> MERGE
+  MERGE --> VAL[Validation Agent]
+  VAL -->|fix needed| REP[Conditional repair loop]
+  REP --> WP
+  REP --> DP
+  REP --> SA
+  VAL -->|ok| EXEC[Builder Execution Agent]
+  EXEC --> OUT[Structured JSON + builder_actions + preview]
+

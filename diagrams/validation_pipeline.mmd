@@ -1,0 +1,10 @@
+flowchart TD
+  D[Draft Spec (JSON)] --> CV[Validation: schema + rules]
+  CV --> R1{Dependencies satisfied?}
+  R1 -->|no| MISS[Identify missing dependencies]
+  MISS --> FIX[Repair instructions]
+  FIX --> LOOP[Route to agents for targeted fixes]
+  LOOP --> D
+  R1 -->|yes| CON[Assign confidence scores]
+  CON --> OUT[Validated Spec]
+

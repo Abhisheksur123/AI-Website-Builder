@@ -1,0 +1,6 @@
+flowchart TD
+  VS[Validated Spec] --> GEN[Builder Execution: convert to actions]
+  GEN --> ACT[builder_actions: create pages/components/entities]
+  ACT --> PREV[Preview model generation]
+  PREV --> RESP[Return to frontend]
+
