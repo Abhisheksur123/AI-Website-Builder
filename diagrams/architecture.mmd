@@ -1,14 +1,3 @@
-flowchart TD
-  U[User Prompt] --> C[API: /api/chat]
-  C --> G[LangGraph Orchestrator]
-  G --> A1[Conversation Agent]
-  G --> A2[Website Planner Agent]
-  G --> A3[Database Planner Agent]
-  G --> A4[SEO/Admin Agent]
-  G --> V[Validation Agent]
-  V -->|invalid| R[Repair Routing to Agents]
-  V -->|valid| E[Builder Execution Agent]
-  E --> P[Preview Model + builder_actions]
-  P --> C2[API Response]
-  C2 --> UI[Frontend: Chat + Dashboard + Preview]
+%% Deprecated: diagrams are now embedded in README.md for single-file submission.
+
 

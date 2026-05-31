@@ -1,3 +1,5 @@
+%% Deprecated: diagrams are now embedded in README.md for single-file submission.
+
 flowchart TD
   D[Draft Spec (JSON)] --> CV[Validation: schema + rules]
   CV --> R1{Dependencies satisfied?}
@@ -7,4 +9,6 @@ flowchart TD
   LOOP --> D
   R1 -->|yes| CON[Assign confidence scores]
   CON --> OUT[Validated Spec]
+
+
 
